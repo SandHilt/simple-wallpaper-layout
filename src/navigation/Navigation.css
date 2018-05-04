@@ -1,14 +1,17 @@
 .Navigator {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  padding: 5px;
 }
 
 .Navigator ul {
+  display: grid;
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(21, 1fr);
+  grid-template-columns: repeat(22, 1fr);
   grid-column-gap: 5px;
 }
 
@@ -28,17 +31,12 @@
   width: 100%;
 }
 
-.Navigator button.borderless {
+.Navigator button:disabled {
   border: none;
 }
-.Navigator .borderless:hover,
-.Navigator .borderless:focus {
-  background-color: unset;
-  color: unset;
-}
 
-.Navigator button:hover,
-.Navigator button:focus {
+.Navigator button:enabled:hover,
+.Navigator button:enabled:focus {
   background-color: steelblue;
   color: white;
 }

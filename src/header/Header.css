@@ -1,21 +1,16 @@
 .Header {
-    background-color: hsl(164, 73%, 40%);
-    color: white;
+  background-color: hsl(164, 73%, 40%);
+  color: white;
 }
 
 .Header figure {
-    margin: 0;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 75px auto;
-    grid-column-gap: 15px;
+  margin: 0;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 75px auto;
+  grid-column-gap: 15px;
 }
 
-.Header-logo {
-    width: 100%;
-    height: auto;
-}
-
-.Header-title small{
-    display: block;
+.Header-title small {
+  display: block;
 }

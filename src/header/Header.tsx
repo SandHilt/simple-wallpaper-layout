@@ -1,4 +1,3 @@
-import 'holderjs';
 import * as React from 'react';
 import logo from '../logo.svg';
 import './Header.css';

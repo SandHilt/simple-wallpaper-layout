@@ -1,28 +1,16 @@
 import * as React from 'react';
 
 interface IItemList {
-  ret?: boolean;
+  disabled?: boolean;
 }
 
 export default class Item extends React.Component<IItemList> {
   public render() {
-    const { ret, children: inner } = this.props;
-
-    let special: string = '';
-
-    if (ret) {
-      special = 'borderless';
-    }
+    const { disabled, children: inner } = this.props;
 
     return (
       <React.Fragment>
-        <li>
-          {
-            <button disabled={ret} className={special}>
-              {inner}
-            </button>
-          }
-        </li>
+        <li>{<button disabled={disabled}>{inner}</button>}</li>
       </React.Fragment>
     );
   }

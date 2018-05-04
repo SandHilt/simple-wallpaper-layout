@@ -14,7 +14,13 @@ export default class Navigation extends React.Component<IProps> {
     const m = Math.min(17, length);
 
     nav.push(
-      <Item key={id++} ret={true}>
+      <Item key={id++} disabled={true}>
+        Previous
+      </Item>
+    );
+
+    nav.push(
+      <Item key={id++} disabled={true}>
         <strong>1</strong>
       </Item>
     );
@@ -27,7 +33,7 @@ export default class Navigation extends React.Component<IProps> {
     if (length > 17) {
       if (length - m > 3) {
         nav.push(
-          <Item key={id} ret={true}>
+          <Item key={id} disabled={true}>
             ...
           </Item>
         );
@@ -38,6 +44,8 @@ export default class Navigation extends React.Component<IProps> {
         nav.push(btn);
       }
     }
+
+    nav.push(<Item key={id++}>Next</Item>);
 
     return (
       <nav className="Navigator">
