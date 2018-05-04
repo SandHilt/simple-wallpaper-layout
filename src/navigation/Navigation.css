@@ -1,0 +1,44 @@
+.Navigator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Navigator ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  grid-column-gap: 5px;
+}
+
+.Navigator li {
+  text-align: center;
+}
+
+.Navigator button {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 4px;
+  color: crimson;
+  background-color: white;
+  box-shadow: none;
+  border: 1px solid #bbb;
+  color: #666;
+  width: 100%;
+}
+
+.Navigator button.borderless {
+  border: none;
+}
+.Navigator .borderless:hover,
+.Navigator .borderless:focus {
+  background-color: unset;
+  color: unset;
+}
+
+.Navigator button:hover,
+.Navigator button:focus {
+  background-color: steelblue;
+  color: white;
+}
