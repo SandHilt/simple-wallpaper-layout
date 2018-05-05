@@ -1,5 +1,4 @@
 import * as React from 'react';
-import logo from '../logo.svg';
 import './Header.css';
 
 export default class Header extends React.Component {
@@ -7,7 +6,11 @@ export default class Header extends React.Component {
     return (
       <header className="Header">
         <figure>
-          <img className="Header-logo" src={logo} alt="logo" />
+          <img
+            className="Header-logo"
+            src="holder.js/100px100p?text=Logo&auto=yes&theme=industrial"
+            alt="logo"
+          />
           <figcaption className="Header-title">
             <h2>
               Contoso
