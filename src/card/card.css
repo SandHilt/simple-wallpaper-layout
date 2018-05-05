@@ -1,4 +1,7 @@
 .Card {
+  grid-column: span 1;
+  justify-content: center;
+
   display: grid;
   grid-template-rows: auto auto;
   grid-row-gap: 15px;
@@ -8,8 +11,10 @@
 .Card img {
   width: 100%;
   height: auto;
+  margin: 0 auto;
 }
 
 .Card figcaption {
   text-align: center;
+  width: 180px;
 }
