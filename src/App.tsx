@@ -4,7 +4,7 @@ import Card from './card/Card';
 import Header from './header/Header';
 import Navigation from './navigation/Navigation';
 
-const TOTAL: number = 10;
+const TOTAL: number = 100;
 
 interface ISettings {
   column: number;

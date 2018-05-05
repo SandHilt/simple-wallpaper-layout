@@ -25,7 +25,7 @@ export default class Card extends React.Component<IProps, IText> {
       <figure className="Card">
         <img
           src="#"
-          data-src={`holder.js/180x320?text=Image ${this.props.nth}`}
+          data-src={`holder.js/180x320?bg=#333&text=Image ${this.props.nth}`}
           alt="Wallpaper"
         />
         <figcaption>{this.state.text}</figcaption>
