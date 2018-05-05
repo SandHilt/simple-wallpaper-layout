@@ -1,0 +1,15 @@
+.Card {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-row-gap: 15px;
+  margin: 0;
+}
+
+.Card img {
+  width: 100%;
+  height: auto;
+}
+
+.Card figcaption {
+  text-align: center;
+}

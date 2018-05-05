@@ -7,7 +7,7 @@
   margin: 0;
   padding: 10px;
   display: grid;
-  grid-template-columns: 75px auto;
+  grid-template-columns: 75px 2fr;
   grid-column-gap: 15px;
 }
 

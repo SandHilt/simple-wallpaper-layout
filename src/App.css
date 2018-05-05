@@ -1,17 +1,14 @@
 .App {
   font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-  display: grid;
-  grid-template-rows: repeat(3, auto);
-  grid-auto-columns: 1fr;
-}
-
-.App img {
-  width: 100%;
-  height: auto;
 }
 
 .App-wall {
   display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, 180px);
+  justify-content: space-around;
+  grid-row-gap: 1em;
+}
+
+.App header {
+  /* display: none; */
 }

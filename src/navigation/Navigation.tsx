@@ -26,8 +26,8 @@ export default class Navigation extends React.Component<IProps> {
     );
 
     for (; id < m + 1; id++) {
-      const btn = <Item key={id}>{id}</Item>;
-      nav.push(btn);
+      const item = <Item key={id}>{id}</Item>;
+      nav.push(item);
     }
 
     if (length > 17) {
@@ -40,8 +40,8 @@ export default class Navigation extends React.Component<IProps> {
         id++;
       }
       for (let i = length - 2; i <= length; i++, id++) {
-        const btn = <Item key={id}>{i}</Item>;
-        nav.push(btn);
+        const item = <Item key={id}>{i}</Item>;
+        nav.push(item);
       }
     }
 

@@ -8,7 +8,7 @@ export default class Header extends React.Component {
         <figure>
           <img
             className="Header-logo"
-            src="holder.js/100px100p?text=Logo&auto=yes&theme=industrial"
+            src="holder.js/100px100p?auto=yes"
             alt="logo"
           />
           <figcaption className="Header-title">
