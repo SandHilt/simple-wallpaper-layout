@@ -5,6 +5,8 @@ import './Card.css';
 
 interface IProps {
   nth: number;
+  hidden: boolean;
+  url?: string;
 }
 
 interface IText {
@@ -15,20 +17,21 @@ export default class Card extends React.Component<IProps, IText> {
   constructor(props: any) {
     super(props);
     this.state = {
-      text: Lorem({
-        count: 1,
-      }),
+      text: Lorem(),
     };
   }
   public render() {
+    const { hidden, url } = this.props;
+    const { text } = this.state;
+
     return (
-      <figure className="Card">
+      <figure className="Card" hidden={hidden}>
         <img
-          src="#"
-          data-src={`holder.js/180x320?bg=#333&text=Image ${this.props.nth}`}
+          src={url || '#'}
+          // data-src={`holder.js/180x320?bg=#333&text=Image ${nth}`}
           alt="Wallpaper"
         />
-        <figcaption>{this.state.text}</figcaption>
+        <figcaption>{text}</figcaption>
       </figure>
     );
   }

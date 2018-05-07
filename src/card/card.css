@@ -1,4 +1,4 @@
-.Card {
+.Card:not([hidden]) {
   grid-column: span 1;
   justify-content: center;
 
