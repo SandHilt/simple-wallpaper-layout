@@ -18,7 +18,11 @@ class App extends React.Component<any, ISettings> {
     const cardsPerPage = 20;
     const cards: JSX.Element[] = Array(total).fill(null);
 
-    this.state = { cards, cardsPerPage, start };
+    this.state = {
+      cards,
+      cardsPerPage,
+      start,
+    };
     this.handleClick = this.handleClick.bind(this);
   }
   public handleClick(start: number) {
@@ -27,14 +31,16 @@ class App extends React.Component<any, ISettings> {
     });
   }
   public componentWillMount() {
-    const { cards } = this.state;
+    const { cards, cardsPerPage } = this.state;
 
     for (let index = 0; index < cards.length; index++) {
       cards[index] = (
         <Card
           key={index}
-          // hidden={index < start * cardsPerPage || index >= cardsPerPage}
+          page={Math.floor(index / cardsPerPage)}
           url={`holder.js/180x320?auto=yes&text=Image ${index + 1}`}
+          // hidden={index < start * cardsPerPage || index >= cardsPerPage}
+          // url={`https://loremflickr.com/180/320?random=${index}`}
         />
       );
     }

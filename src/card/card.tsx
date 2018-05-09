@@ -4,7 +4,8 @@ import * as React from 'react';
 import './Card.css';
 
 interface IProps {
-  url?: string;
+  url: string;
+  page: number;
 }
 
 interface IText {
@@ -26,7 +27,7 @@ export default class Card extends React.Component<IProps, IText> {
 
     return (
       <figure className="Card" hidden={hidden}>
-        <img src="#" data-src={url} alt="Wallpaper" />
+        <img src={url} alt="Wallpaper" />
         <figcaption>{text}</figcaption>
       </figure>
     );
