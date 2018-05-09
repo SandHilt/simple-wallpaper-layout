@@ -1,6 +1,6 @@
-import * as React from 'react';
-import Item from './Item';
-import './Navigation.css';
+import * as React from "react";
+import Item from "./Item";
+import "./Navigation.css";
 
 interface IProps {
   length: number;
