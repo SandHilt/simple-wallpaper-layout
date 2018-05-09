@@ -1,14 +1,14 @@
-import "holderjs";
-import * as Lorem from "lorem-ipsum";
-import * as React from "react";
-import "./Card.css";
+import 'holderjs';
+import * as Lorem from 'lorem-ipsum';
+import * as React from 'react';
+import './Card.css';
 
 interface IProps {
-  hidden: boolean;
   url?: string;
 }
 
 interface IText {
+  hidden: boolean;
   text: string;
 }
 
@@ -16,12 +16,13 @@ export default class Card extends React.Component<IProps, IText> {
   constructor(props: any) {
     super(props);
     this.state = {
-      text: Lorem()
+      hidden: false,
+      text: Lorem(),
     };
   }
   public render() {
-    const { hidden, url } = this.props;
-    const { text } = this.state;
+    const { url } = this.props;
+    const { text, hidden } = this.state;
 
     return (
       <figure className="Card" hidden={hidden}>

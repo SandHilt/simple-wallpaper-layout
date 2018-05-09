@@ -14,7 +14,7 @@ export default class Item extends React.Component<IItemList> {
   public handleClick() {
     const { id, onClick } = this.props;
     if (onClick && id) {
-      onClick(id);
+      onClick(id - 1);
     }
   }
   public render() {

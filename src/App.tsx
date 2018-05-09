@@ -1,14 +1,13 @@
-import * as React from "react";
-import "./App.css";
-import Card from "./card/Card";
-import Header from "./header/Header";
-import Navigation from "./navigation/Navigation";
+import * as React from 'react';
+import './App.css';
+import Card from './card/Card';
+import Header from './header/Header';
+import Navigation from './navigation/Navigation';
 
 interface ISettings {
   cards: JSX.Element[];
   start: number;
   cardsPerPage: number;
-  total: number;
 }
 
 class App extends React.Component<any, ISettings> {
@@ -17,38 +16,32 @@ class App extends React.Component<any, ISettings> {
     const start = 0;
     const total = 100;
     const cardsPerPage = 20;
-    const cards: JSX.Element[] = [];
+    const cards: JSX.Element[] = Array(total).fill(null);
 
-    this.state = {
-      cards,
-      cardsPerPage,
-      start,
-      total
-    };
+    this.state = { cards, cardsPerPage, start };
     this.handleClick = this.handleClick.bind(this);
   }
-  public handleClick(id: number) {
-    const actual = id - 1;
+  public handleClick(start: number) {
     this.setState({
-      start: actual
+      start,
     });
   }
   public componentWillMount() {
-    const { cards, total, cardsPerPage } = this.state;
+    const { cards } = this.state;
 
-    for (let index = 0; index < total; index++) {
-      cards.push(
+    for (let index = 0; index < cards.length; index++) {
+      cards[index] = (
         <Card
           key={index}
-          hidden={index >= cardsPerPage}
-          url={`holder.js/180x320?auto=yes`}
+          // hidden={index < start * cardsPerPage || index >= cardsPerPage}
+          url={`holder.js/180x320?auto=yes&text=Image ${index + 1}`}
         />
       );
     }
   }
   public render() {
-    const { cards, cardsPerPage, total } = this.state;
-    const perPageNavigation = Math.ceil(total / cardsPerPage);
+    const { cards, cardsPerPage } = this.state;
+    const perPageNavigation = Math.ceil(cards.length / cardsPerPage);
 
     return (
       <main className="App">
