@@ -1,3 +1,4 @@
+import * as holder from 'holderjs';
 import * as React from 'react';
 import './App.css';
 import Card from './card/Card';
@@ -6,8 +7,9 @@ import Navigation from './navigation/Navigation';
 
 interface ISettings {
   cards: JSX.Element[];
-  start: number;
   cardsPerPage: number;
+  perPageNavigation: number;
+  start: number;
 }
 
 class App extends React.Component<any, ISettings> {
@@ -21,6 +23,7 @@ class App extends React.Component<any, ISettings> {
     this.state = {
       cards,
       cardsPerPage,
+      perPageNavigation: Math.ceil(total / cardsPerPage),
       start,
     };
     this.handleClick = this.handleClick.bind(this);
@@ -31,23 +34,32 @@ class App extends React.Component<any, ISettings> {
     });
   }
   public componentWillMount() {
-    const { cards, cardsPerPage } = this.state;
+    const { cards } = this.state;
 
     for (let index = 0; index < cards.length; index++) {
       cards[index] = (
         <Card
           key={index}
-          page={Math.floor(index / cardsPerPage)}
-          url={`holder.js/180x320?auto=yes&text=Image ${index + 1}`}
-          // hidden={index < start * cardsPerPage || index >= cardsPerPage}
-          // url={`https://loremflickr.com/180/320?random=${index}`}
+          url={`holder.js/180x320?auto=yes&bg=#333&text=Image ${index + 1}`}
         />
       );
     }
   }
+  public componentDidUpdate() {
+    const images = document.getElementsByTagName('img');
+    for (let i = 0; i < images.length; i++) {
+      holder.run({
+        images: images.item(i),
+      });
+    }
+  }
   public render() {
-    const { cards, cardsPerPage } = this.state;
-    const perPageNavigation = Math.ceil(cards.length / cardsPerPage);
+    const { start, cards, cardsPerPage, perPageNavigation } = this.state;
+
+    const begin = start * cardsPerPage;
+    const end = begin + cardsPerPage;
+
+    const someVisibleCards = cards.slice(begin, end);
 
     return (
       <main className="App">
@@ -57,7 +69,7 @@ class App extends React.Component<any, ISettings> {
           start={this.state.start}
           onClick={this.handleClick}
         />
-        <article className="App-wall">{cards}</article>
+        <article className="App-wall">{someVisibleCards}</article>
       </main>
     );
   }
