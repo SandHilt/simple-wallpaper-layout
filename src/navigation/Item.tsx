@@ -2,7 +2,7 @@ import * as React from "react";
 
 interface IItemList {
   disabled?: boolean;
-  onClick?: any;
+  onClick?: ((id: number) => void);
   id?: number;
 }
 
@@ -12,7 +12,7 @@ export default class Item extends React.Component<IItemList> {
     this.handleClick = this.handleClick.bind(this);
   }
   public handleClick() {
-    const { onClick, id } = this.props;
+    const { id, onClick } = this.props;
     if (onClick && id) {
       onClick(id);
     }
@@ -21,15 +21,11 @@ export default class Item extends React.Component<IItemList> {
     const { disabled, children: inner } = this.props;
 
     return (
-      <React.Fragment>
-        <li>
-          {
-            <button disabled={disabled} onClick={this.handleClick}>
-              {inner}
-            </button>
-          }
-        </li>
-      </React.Fragment>
+      <li>
+        <button disabled={disabled} onClick={this.handleClick}>
+          {inner}
+        </button>
+      </li>
     );
   }
 }
