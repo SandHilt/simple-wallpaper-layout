@@ -1,6 +1,6 @@
-import * as React from "react";
-import Item from "./Item";
-import "./Navigation.css";
+import * as React from 'react';
+import Item from './Item';
+import './Navigation.css';
 
 interface IProps {
   length: number;
@@ -71,6 +71,7 @@ export default class Navigation extends React.Component<IProps> {
 
     return (
       <nav className="Navigator">
+        <span className="title">Navigation</span>
         <ul>{nav}</ul>
       </nav>
     );

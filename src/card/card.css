@@ -1,4 +1,4 @@
-.Card:not([hidden]) {
+.Card {
   grid-column: span 1;
   justify-content: center;
 
@@ -6,6 +6,45 @@
   grid-template-rows: auto auto;
   grid-row-gap: 15px;
   margin: 0;
+}
+
+.Card dialog {
+  max-width: 800px;
+}
+
+.Card dialog::backdrop,
+.Card dialog + .backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.Card dialog form {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.Card dialog .close {
+  border: 1px solid #bbb;
+  color: #333;
+  height: 2em;
+  width: 3em;
+  font-weight: bold;
+}
+
+.Card .close:hover {
+  background-color: crimson;
+  border-color: crimson;
+  color: white;
+}
+
+.Card a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.Card a:hover,
+.Card a:focus {
+  text-decoration: underline;
 }
 
 .Card img {

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animate.css": "^3.6.1",
+    "dialog-polyfill": "^0.4.9",
     "holderjs": "^2.9.4",
     "lorem-ipsum": "^1.0.4",
     "normalize.css": "^8.0.0",

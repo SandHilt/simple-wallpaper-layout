@@ -1,7 +1,9 @@
-import * as holder from 'holderjs';
+import 'animate.css';
+import 'holderjs';
 import * as React from 'react';
 import './App.css';
 import Card from './card/Card';
+import Footer from './footer/Footer';
 import Header from './header/Header';
 import Navigation from './navigation/Navigation';
 
@@ -37,22 +39,18 @@ class App extends React.Component<any, ISettings> {
     const { cards } = this.state;
 
     for (let index = 0; index < cards.length; index++) {
-      cards[index] = (
-        <Card
-          key={index}
-          url={`holder.js/180x320?auto=yes&bg=#333&text=Image ${index + 1}`}
-        />
-      );
+      const url = new URL(`/180/320?lock=${index}`, 'https://loremflickr.com');
+      cards[index] = <Card key={index} url={url} />;
     }
   }
-  public componentDidUpdate() {
-    const images = document.getElementsByTagName('img');
-    for (let i = 0; i < images.length; i++) {
-      holder.run({
-        images: images.item(i),
-      });
-    }
-  }
+  // public componentDidUpdate() {
+  //   const images = document.getElementsByTagName('img');
+  //   for (let i = 0; i < images.length; i++) {
+  //     holder.run({
+  //       images: images.item(i),
+  //     });
+  //   }
+  // }
   public render() {
     const { start, cards, cardsPerPage, perPageNavigation } = this.state;
 
@@ -70,6 +68,7 @@ class App extends React.Component<any, ISettings> {
           onClick={this.handleClick}
         />
         <article className="App-wall">{someVisibleCards}</article>
+        <Footer />
       </main>
     );
   }

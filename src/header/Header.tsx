@@ -12,10 +12,10 @@ export default class Header extends React.Component {
             alt="logo"
           />
           <figcaption className="Header-title">
-            <h2>
-              Contoso
+            <h1>
+              Contoso 😸
               <small>The beautiful design</small>
-            </h2>
+            </h1>
           </figcaption>
         </figure>
       </header>
