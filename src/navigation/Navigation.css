@@ -45,6 +45,6 @@
 
 .Navigator button:enabled:hover,
 .Navigator button:enabled:focus {
-  background-color: steelblue;
+  background-color: var(--green);
   color: white;
 }
