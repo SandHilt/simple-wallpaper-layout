@@ -1,7 +1,9 @@
-import * as dialogPolyfill from 'dialog-polyfill';
+// Polyfill
+import dialogPolyfill from 'dialog-polyfill';
 import 'dialog-polyfill/dialog-polyfill.css';
-import * as Lorem from 'lorem-ipsum';
-import * as React from 'react';
+
+import { LoremIpsum } from "lorem-ipsum";
+import React from 'react';
 import './Card.css';
 
 interface IProps {
@@ -19,7 +21,7 @@ export default class Card extends React.Component<IProps, IText> {
     super(props);
 
     this.state = {
-      text: Lorem(),
+      text: new LoremIpsum().generateWords(3),
     };
     this.toggleModal = this.toggleModal.bind(this);
     this.dialog = React.createRef();
@@ -50,15 +52,15 @@ export default class Card extends React.Component<IProps, IText> {
 
     return (
       <figure className="Card">
-        <a href="#" onClick={this.toggleModal}>
-          <img className="animated fadeIn" src={url.href} alt="Wallpaper" />
-          <figcaption>{text}</figcaption>
-        </a>
+        <span className="content" onClick={this.toggleModal}>
+          <img className="animated fadeIn" src={url.href} alt="This is a cat in thumb." />
+          <figcaption className="text">{text}</figcaption>
+        </span>
         <dialog ref={this.dialog}>
           <form method="dialog">
             <input className="close" type="submit" value="&times;" />
           </form>
-          <img src={`${url.origin}/800/600${url.search}`} />
+          <img src={`${url.origin}/800/600${url.search}`} alt="This is a big cat." />
         </dialog>
       </figure>
     );

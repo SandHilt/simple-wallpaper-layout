@@ -8,6 +8,14 @@
   margin: 0;
 }
 
+.Card .content {
+  cursor: pointer;
+}
+
+.Card:hover .text {
+  text-decoration: underline;
+}
+
 .Card dialog {
   max-width: 800px;
 }

@@ -1,6 +1,6 @@
 import 'animate.css';
 import 'holderjs';
-import * as React from 'react';
+import React from 'react';
 import './App.css';
 import Card from './card/Card';
 import Footer from './footer/Footer';

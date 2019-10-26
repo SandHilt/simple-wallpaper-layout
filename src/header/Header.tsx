@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React from 'react';
 import './Header.css';
 
 export default class Header extends React.Component {
@@ -13,7 +13,7 @@ export default class Header extends React.Component {
           />
           <figcaption className="Header-title">
             <h1>
-              Contoso 😸
+              Contoso <span aria-label="This is a cat" role="img">😸</span>
               <small>The beautiful design</small>
             </h1>
           </figcaption>
