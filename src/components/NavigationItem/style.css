@@ -1,0 +1,24 @@
+.Navigator-item {
+  text-align: center;
+}
+
+.Navigator-item button {
+  font-size: 0.6875em;
+  font-weight: bold;
+  padding: 3px 4px;
+  box-shadow: none;
+  border: 1px solid #bbb;
+  color: #666;
+  width: 100%;
+}
+
+.Navigator-item button:disabled {
+  border: none;
+  background-color: transparent;
+}
+
+.Navigator-item button:enabled:hover,
+.Navigator-item button:enabled:focus {
+  background-color: var(--green);
+  color: white;
+}

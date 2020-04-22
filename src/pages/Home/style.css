@@ -1,13 +1,13 @@
-.App-wall {
+.Home-wall {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: space-around;
-  grid-row-gap: 1em;
-  grid-column-gap: 0.5em;
+  row-gap: 1em;
+  column-gap: 0.5em;
 }
 
 @media (max-width: calc(4 * 180px)) {
-  .App-wall {
+  .Home-wall {
     grid-template-columns: repeat(auto-fill, 180px);
   }
 }
