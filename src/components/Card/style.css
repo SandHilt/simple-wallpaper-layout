@@ -18,6 +18,9 @@
 
 .Card dialog {
   max-width: 800px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
 }
 
 .Card dialog::backdrop,

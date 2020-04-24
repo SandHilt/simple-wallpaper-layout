@@ -1,16 +1,21 @@
 import React, { useContext } from "react";
 import "./style.css";
-import context from "../NavigationContext";
+import NavigationContext from "../NavigationContext";
 
 const NavigationItem: React.FC<NavigationItemProps> = ({
   id,
   disabled,
   children: inner,
 }) => {
+  const context = useContext(NavigationContext);
+
   const handleClick = () => {
-    console.log("chamei");
-    // const onClick = useContext(context);
-    // onClick(id - 1);
+    console.log("chamei o clique");
+    debugger;
+
+    if (context.handlePage) {
+      context.handlePage(id - 1);
+    }
   };
 
   return (

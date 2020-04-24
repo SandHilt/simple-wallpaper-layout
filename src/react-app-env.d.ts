@@ -1,5 +1,9 @@
 /// <reference types="react-scripts" />
 
+declare interface NavigationContext {
+  handlePage: (page: number) => void;
+}
+
 declare interface Dimension {
   width: number;
   height: number;

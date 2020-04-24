@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const context = createContext((page: number) => {});
+const NavigationContext = createContext<Partial<NavigationContext>>({});
 
-export default context;
+export default NavigationContext;

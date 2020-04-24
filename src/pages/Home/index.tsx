@@ -46,12 +46,12 @@ const Home: React.FC = () => {
   }, [cards]);
 
   useEffect(() => {
-    console.log("setpages");
+    // console.log("setpages");
     setPages(Math.ceil(total / cardsPerPage));
   }, [cardsPerPage]);
 
   useEffect(() => {
-    console.log("setpartialcards");
+    // console.log("setpartialcards");
     if (cards.length > 0) {
       const begin = page * cardsPerPage;
       const end = begin + cardsPerPage;
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
   return (
     <main>
       <Header />
-      <NavigationContext.Provider value={handlePage}>
+      <NavigationContext.Provider value={{ handlePage }}>
         <Navigation
           length={pages}
           {...{ page, optSize, onChangeSize, cardsPerPage }}

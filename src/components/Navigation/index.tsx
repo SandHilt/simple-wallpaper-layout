@@ -9,24 +9,33 @@ export const Navigation: React.FC<NavigationProps> = ({
   onChangeSize,
   optSize,
 }) => {
+  const [maxItens] = useState(17);
   const [nav, setNav] = useState<JSX.Element[]>([]);
-  console.log({ length });
+  // console.log({ length });
 
   useEffect(() => {
-    console.log("setnav");
-    const max = Math.min(17, length);
+    // console.log("setnav");
+    const max = Math.min(maxItens, length);
 
     const aux: JSX.Element[] = [];
 
+    // aux.push(
+    //   <NavigationItem key={0} disabled={}>
+
+    //   </NavigationItem>
+    // )
+
+    // let id = 1;
+
     for (let i = 0; i < max + 1; i++) {
       aux.push(
-        <NavigationItem key={i} disabled={page === 1} id={page - 1}>
+        <NavigationItem key={i} disabled={page === 1} id={page}>
           {i}
         </NavigationItem>
       );
     }
     setNav(aux);
-  }, [length, page]);
+  }, [length, maxItens, page]);
 
   const noop = ({ preventDefault }: FormEvent<HTMLFormElement>) =>
     preventDefault();
