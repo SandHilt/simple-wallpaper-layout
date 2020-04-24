@@ -14,7 +14,7 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
     debugger;
 
     if (context.handlePage) {
-      context.handlePage(id - 1);
+      context.handlePage(id);
     }
   };
 

@@ -4,10 +4,9 @@ import dialogPollyfill from "dialog-polyfill";
 import "./style.css";
 
 const Card: React.FC<CardProps> = ({
-  index,
   big: { width: bigW, height: bigH },
   thumb: { width: thW, height: thH },
-  url: { href: src, origin, search },
+  url: { origin, search },
 }) => {
   const text = new LoremIpsum().generateWords(3);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -43,7 +42,7 @@ const Card: React.FC<CardProps> = ({
           width={thW}
           height={thH}
           src={`${origin}/${thW}/${thH}${search}`}
-          alt="This is a cata in thumb."
+          alt="This is a cat in thumb."
         />
         <figcaption className="text">{text}</figcaption>
       </a>

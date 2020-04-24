@@ -14,7 +14,8 @@ export const Navigation: React.FC<NavigationProps> = ({
   // console.log({ length });
 
   useEffect(() => {
-    // console.log("setnav");
+    console.log("setnav");
+    console.table({ length, maxItens, page });
     const max = Math.min(maxItens, length);
 
     const aux: JSX.Element[] = [];
@@ -27,7 +28,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
     // let id = 1;
 
-    for (let i = 0; i < max + 1; i++) {
+    for (let i = 1; i < max + 1; i++) {
       aux.push(
         <NavigationItem key={i} disabled={page === 1} id={page}>
           {i}

@@ -10,7 +10,6 @@ declare interface Dimension {
 }
 
 declare interface CardProps {
-  index: number;
   url: URL;
   big: Dimension;
   thumb: Dimension;

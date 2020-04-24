@@ -33,7 +33,6 @@ const Home: React.FC = () => {
         const url = new URL(`?lock=${i}`, "https://loremflickr.com");
         aux.push(
           <Card
-            index={i}
             key={i}
             big={{ width: 800, height: 600 }}
             thumb={{ width: 180, height: 320 }}
