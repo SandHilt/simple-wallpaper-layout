@@ -10,6 +10,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   const text = new LoremIpsum().generateWords(3);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   const toogleModal = (e: MouseEvent) => {
     e.preventDefault();
@@ -37,11 +38,11 @@ const Card: React.FC<CardProps> = ({
     <figure className="Card">
       <a href="#modal" className="content" onClick={toogleModal}>
         <img
+          ref={imageRef}
           className="animated fadeIn"
-          loading="lazy"
           width={thW}
           height={thH}
-          src={`${origin}/${thW}/${thH}${search}`}
+          data-src="holder.js/100px100p?auto=yes"
           alt="This is a cat in thumb."
         />
         <figcaption className="text">{text}</figcaption>

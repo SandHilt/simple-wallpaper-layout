@@ -15,7 +15,7 @@ export const Navigation: React.FC<NavigationProps> = ({
 
   useEffect(() => {
     console.log("setnav");
-    console.table({ length, maxItens, page });
+    // console.table({ length, maxItens, page });
     const max = Math.min(maxItens, length);
 
     const aux: JSX.Element[] = [];

@@ -1,5 +1,4 @@
 import 'animate.css';
-import 'holderjs';
 import React from 'react';
 import './App.css';
 import Card from './card/Card';

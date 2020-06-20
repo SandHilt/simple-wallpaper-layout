@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 
 import "animate.css";
 import "./index.css";
-import "holderjs";
 
 import Home from "./pages/Home";
 import * as serviceWorker from "./serviceWorker";
